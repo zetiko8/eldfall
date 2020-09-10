@@ -1,0 +1,43 @@
+{
+  "name": "resource",
+  "version": "1.0.0",
+  "description": "3D Widget for shoe2shoe",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=dev BABEL_ENV=dev WIDGET_ENV=dev webpack-dev-server --inline",
+    "start": "cross-env NODE_ENV=dev BABEL_ENV=dev nodemon --exec babel-node src/index.js",
+    "test": "cross-env NODE_ENV=test BABEL_ENV=test ./node_modules/.bin/mocha --require @babel/polyfill --require @babel/register --watch --recursive"
+  },
+  "author": "anze.kolsek@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
+    "@babel/polyfill": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/register": "^7.4.0",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "chai": "^4.2.0",
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.1.1",
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mocha": "^6.2.3",
+    "nodemon": "^1.18.10",
+    "portfinder": "^1.0.20",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.5.0"
+  },
+  "dependencies": {
+    "dat.gui": "^0.7.6",
+    "three": "^0.106.0"
+  }
+}
