@@ -1,4 +1,4 @@
-# Shoe to Shoe 3D Widget
+# Eldafall
 
 Shoe to Shoe 3D Widget visualizes shoe recommendation and fitting advice based on the given refernce shoe.
 
@@ -22,14 +22,10 @@ Follow the steps to get a development environment running:
 
 1. Install node.js and npm;
 2. IDE for coding;
-3. Git/Bitbucket plugin;
-4. Clone the repo locally;
-5. Open project in IDE and run **npm install**;
-6. From root of the project use **npm run dev**. The widget will be available on localchost:8080.
-
-## Development build
-
-
+3. Clone the repo locally;
+4. Open project in IDE and run **npm install**;
+5. From root of the project use **npm run dev**. The widget will be available on localchost:8080.
+6. Open another terminal and run **npm run test**. This will start the unit tests
 
 ## Deployment
 
@@ -37,7 +33,8 @@ Follow the steps to get a development environment running:
 ## Built With
 
 * JavaScript;
-* [Three.js](https://threejs.org/);
+* Webpack
+* Mocha + Chai
 
 ## Versioning
 
@@ -45,8 +42,8 @@ Follow the steps to get a development environment running:
 
 ## Author
 
-anze.kolsek@safesize.com, 2019
+anze.kolsek@gmail.com
+domen.kolsek@gmail.com
 
 ## License
 
-Safesize
