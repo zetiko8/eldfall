@@ -23,9 +23,11 @@ Follow the steps to get a development environment running:
 1. Install node.js and npm;
 2. IDE for coding;
 3. Clone the repo locally;
-4. Open project in IDE and run **npm install**;
-5. From root of the project use **npm run dev**. The widget will be available on localchost:8080.
-6. Open another terminal and run **npm run test**. This will start the unit tests
+4. From the terminal run **git checkout dev**. This will open the development branch.
+5. Than from the same terminal run **git checkout (name of your branch)** to create your own branch 
+6. Open project in IDE and run **npm install**;
+7. From root of the project use **npm run dev**. The widget will be available on localchost:8080.
+8. Open another terminal and run **npm run test**. This will start the unit tests
 
 ## Deployment
 
