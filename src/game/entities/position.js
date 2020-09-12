@@ -10,4 +10,14 @@ export default class Position {
     this.y = y;
     this.z = z;
   }
+
+  /**
+   * Compares two positions
+   * @param {Position} pos1
+   * @param {Position} pos2
+   * @returns {Boolean}
+   */
+  static areSame (pos1, pos2) {
+    return pos1.x === pos2.x && pos1.y === pos2.y && pos1.z === pos2.z;
+  }
 }
