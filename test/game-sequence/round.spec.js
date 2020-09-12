@@ -17,12 +17,26 @@ describe.only('Round', () => {
 
   describe('Flow', () => {
     describe('When starting', () => {
-      it('should start with an unkeepPhase', () => {
+      it('should start with an strategicPhase', () => {
         const activePlayer = new Player('id1', 'anze', 'red');
         const reactivePlayer = new Player('id2', 'domen', 'green');
         const round = new Round(activePlayer, [ activePlayer ], [ reactivePlayer ], 0);
 
         round.start();
+        expect(round.curentPhase.phaseEnum).to.equal(PHASE.strategicPhase);
+      });
+    });
+
+    describe('When the strategic phase ends', () => {
+      it('should start with an unkeepPhase', async () => {
+        const activePlayer = new Player('id1', 'anze', 'red');
+        const reactivePlayer = new Player('id2', 'domen', 'green');
+        const round = new Round(activePlayer, [ activePlayer ], [ reactivePlayer ], 0);
+
+        round.start();
+        round.curentPhase.end();
+
+        await nextTick();
         expect(round.curentPhase.phaseEnum).to.equal(PHASE.unkeep);
       });
     });
@@ -35,7 +49,8 @@ describe.only('Round', () => {
 
         round.start();
         round.curentPhase.end();
-
+        await nextTick();
+        round.curentPhase.end();
         await nextTick();
         expect(round.curentPhase.phaseEnum).to.equal(PHASE.tactical);
       });
@@ -48,6 +63,8 @@ describe.only('Round', () => {
         const round = new Round(activePlayer, [ activePlayer ], [ reactivePlayer ], 0);
 
         round.start();
+        round.curentPhase.end();
+        await nextTick();
         round.curentPhase.end();
         await nextTick();
         round.curentPhase.end();

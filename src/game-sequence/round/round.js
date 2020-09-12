@@ -1,7 +1,7 @@
-import { PHASE } from './phases';
 import UnkeepPhase from './unkeep-phase/unkeepPhase';
 import TacticalPhase from './tactical-phase/tacticalPhase';
 import EndPhase from './end-phase/endPhase';
+import StrategicPhase from './strategic-phase/strategicPhase';
 
 export default class Round {
   /**
@@ -22,9 +22,19 @@ export default class Round {
   }
 
   async start () {
+    await this._startStrategicPhase();
     await this._startUnkeepPhase();
     await this._startTacticalPhase();
     await this._startEndPhase();
+  }
+
+  async _startStrategicPhase () {
+    return new Promise((resolve, reject) => {
+      this.curentPhase = new StrategicPhase();
+      this.curentPhase.onEnd(() => {
+        resolve();
+      });
+    });
   }
 
   async _startUnkeepPhase () {

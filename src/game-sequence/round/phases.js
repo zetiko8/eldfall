@@ -1,7 +1,8 @@
 export const PHASE = {
   unkeep: 'unkeepPhase',
   tactical: 'tacticalPhase',
-  endPhase: 'endPhase'
+  endPhase: 'endPhase',
+  strategicPhase: 'strategicPhase'
 };
 
 export class Phase {
